@@ -6,13 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginEmailET : EditText
     private lateinit var loginPasswordET : EditText
-    private lateinit var loginBtn : Button
-    private lateinit var loginForgotPassword : Button
+    private lateinit var loginBtn : AppCompatButton
+    private lateinit var loginForgotPassword : AppCompatButton
     private val auth = FirebaseAuth.getInstance()
 
 

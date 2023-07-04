@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.widget.AppCompatButton
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -17,9 +18,10 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var userNameTV : TextView
     private lateinit var userNameET : EditText
     private lateinit var userUrlET : EditText
-    private lateinit var uploadBtn : Button
-    private lateinit var updatePasswordBtn : Button
-    private lateinit var closeAppBtn: Button
+    private lateinit var uploadBtn : AppCompatButton
+    private lateinit var updatePasswordBtn : AppCompatButton
+    private lateinit var closeAppBtn: AppCompatButton
+    private lateinit var goToHomeBtn : AppCompatButton
 
     private val db = Firebase.database.getReference("User")
 
@@ -49,6 +51,8 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
+
+
     }
 
     private fun listeners() {
@@ -59,6 +63,9 @@ class ProfileActivity : AppCompatActivity() {
 //            Glide.with(this).load(url).into(imageView)
             db.child(FirebaseAuth.getInstance().uid!!).setValue(userInfo)
         }
+        goToHomeBtn.setOnClickListener() {
+            startActivity(Intent(this,HomeActivity::class.java))
+        }
     }
 
     private fun init(){
@@ -68,6 +75,7 @@ class ProfileActivity : AppCompatActivity() {
         userUrlET = findViewById(R.id.userUrlET)
         uploadBtn = findViewById(R.id.uploadBtn)
         updatePasswordBtn = findViewById(R.id.updatePasswordBtn)
-        closeAppBtn = findViewById<Button>(R.id.closeAppBtn)
+        closeAppBtn = findViewById(R.id.closeAppBtn)
+        goToHomeBtn = findViewById(R.id.goToHomeBtn)
     }
 }

@@ -1,18 +1,22 @@
 package com.example.firebaseapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var registrationEmailET : EditText
     private lateinit var registrationPasswordET : EditText
-    private lateinit var registrationBtn : Button
-    private lateinit var registrationToLoginBtn : Button
+    private lateinit var registrationBtn : AppCompatButton
+    private lateinit var registrationToLoginBtn : AppCompatButton
+    private lateinit var asGuestButton : Button;
 
     private val auth = FirebaseAuth.getInstance()
 
@@ -49,6 +53,12 @@ class RegistrationActivity : AppCompatActivity() {
             finish()
         }
 
+        asGuestButton.setOnClickListener {
+            startActivity(Intent(this,HomeActivity::class.java))
+        }
+
+
+
     }
 
     private fun init(){
@@ -56,5 +66,6 @@ class RegistrationActivity : AppCompatActivity() {
         registrationPasswordET = findViewById(R.id.registrationPasswordET)
         registrationBtn = findViewById(R.id.registrationBtn)
         registrationToLoginBtn = findViewById(R.id.registrationToLoginBtn)
+        asGuestButton = findViewById(R.id.asGuestBtn)
     }
 }

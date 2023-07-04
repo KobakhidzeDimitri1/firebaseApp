@@ -6,33 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
     android:orientation="vertical"
+    android:background="@drawable/register_background"
     android:gravity="center">
 
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_logo"
+        android:layout_marginBottom="20dp"
+        />
+    <!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="23sp"
+        android:layout_marginBottom="15dp"
+        />
     <EditText
         android:id="@+id/registrationEmailET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/input_fields"
         android:inputType="textEmailAddress"
-        android:hint="enter email"/>
+        android:hint="Enter email"/>
 
     <EditText
         android:id="@+id/registrationPasswordET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/input_fields"
+        android:layout_marginTop="15dp"
         android:inputType="numberPassword"
-        android:hint="enter password"/>
+        android:hint="Enter password"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registrationBtn"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="17sp"
         android:text="register" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registrationToLoginBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:text="Login" />
+    <Button
+        android:id="@+id/asGuestBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go To Login" />
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:textColor="#9A969E"
+        android:textStyle="bold"
+        android:text="View as guest" />
 
 </LinearLayout>

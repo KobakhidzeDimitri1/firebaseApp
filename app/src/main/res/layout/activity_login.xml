@@ -6,32 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/register_background"
+    >
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/curcling_biceps"
+        android:layout_marginBottom="30dp"
+        />
 
     <EditText
         android:id="@+id/loginEmailET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="email"/>
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/input_fields"
+        android:hint="Email"/>
 
     <EditText
         android:id="@+id/loginPasswordET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
         android:inputType="numberPassword"
-        android:hint="password"/>
+        android:background="@drawable/input_fields"
+        android:hint="Password"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="17sp"
         android:text="login" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginForgotPassword"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="17sp"
         android:text="Forgot Password" />
 
 </LinearLayout>

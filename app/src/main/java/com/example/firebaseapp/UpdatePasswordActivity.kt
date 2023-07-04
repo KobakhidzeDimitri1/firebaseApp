@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.EmailAuthProvider
 
@@ -19,7 +20,7 @@ class UpdatePasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_update_password)
 
 
-        val updatePasswordBtn = findViewById<Button>(R.id.updatePasswordBtn)
+        val updatePasswordBtn = findViewById<AppCompatButton>(R.id.updatePasswordBtn)
 
         updatePasswordBtn.setOnClickListener() {
             val newPassword = findViewById<EditText>(R.id.newPasswordET).text.toString()
